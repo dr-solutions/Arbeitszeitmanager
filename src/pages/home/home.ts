@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController, AlertController } from 'ionic-angular';
 import * as moment from 'moment';
+import { EreignisModalPage } from '../ereignis-modal/ereignis-modal';
 
 @Component({
   selector: 'page-home',
@@ -20,7 +21,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, private modalCtrl: ModalController, private alertCtrl: AlertController) { }
  
   addEvent() {
-    let modal = this.modalCtrl.create('EventModalPage', {selectedDay: this.selectedDay});
+    let modal = this.modalCtrl.create(EreignisModalPage, {selectedDay: this.selectedDay});
     modal.present();
     modal.onDidDismiss(data => {
       if (data) {
