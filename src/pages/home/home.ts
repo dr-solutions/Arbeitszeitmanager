@@ -15,10 +15,12 @@ export class HomePage {
  
   calendar = {
     mode: 'month',
-    currentDate: new Date()
+    currentDate: new Date(),
+    locale: 'de-AT'
   };
   
-  constructor(public navCtrl: NavController, private modalCtrl: ModalController, private alertCtrl: AlertController) { }
+  constructor(public navCtrl: NavController, private modalCtrl: ModalController, private alertCtrl: AlertController) { 
+  }
  
   addEvent() {
     let modal = this.modalCtrl.create(EreignisModalPage, {selectedDay: this.selectedDay});
@@ -58,6 +60,10 @@ export class HomePage {
  
   onTimeSelected(ev) {
     this.selectedDay = ev.selectedTime;
+  }
+
+  export(eventSource) {
+    console.log(eventSource);
   }
 
 }

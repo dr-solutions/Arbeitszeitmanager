@@ -9,8 +9,7 @@ import * as moment from 'moment';
 })
 export class EreignisModalPage {
 
-  event = { startTime: new Date().toISOString(), endTime: new Date().toISOString(), allDay: false };
-  minDate = new Date().toISOString();
+  event = { startTime: new Date().toISOString(), endTime: new Date().toISOString(), title: '' };
  
   constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController) {
     let preselectedDate = moment(this.navParams.get('selectedDay')).format();

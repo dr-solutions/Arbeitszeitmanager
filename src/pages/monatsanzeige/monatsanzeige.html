@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Monatsanzeige</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Monat auswählen:</ion-label>
+    <ion-datetime displayFormat="MMMM.YYYY" 
+                  pickerFormat="MMMM.YYYY" 
+                  [(ngModel)]="datum" 
+                  [monthNames]="monatsnamen"
+                  (ionChange)="datumChanged($event)">
+    </ion-datetime>
+  </ion-item>
+
+</ion-content>

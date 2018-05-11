@@ -1,4 +1,4 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -12,6 +12,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { EreignisModalPageModule } from '../pages/ereignis-modal/ereignis-modal.module';
 
+import { registerLocaleData } from '@angular/common';
+import localeDEAT from '@angular/common/locales/de-AT';
+import { MonatsanzeigePageModule } from '../pages/monatsanzeige/monatsanzeige.module';
+registerLocaleData(localeDEAT);
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,6 +26,7 @@ import { EreignisModalPageModule } from '../pages/ereignis-modal/ereignis-modal.
   imports: [
     BrowserModule,
     EreignisModalPageModule,
+    MonatsanzeigePageModule,
     NgCalendarModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -33,7 +39,8 @@ import { EreignisModalPageModule } from '../pages/ereignis-modal/ereignis-modal.
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: LOCALE_ID, useValue: 'de-AT' }
   ]
 })
 export class AppModule {}

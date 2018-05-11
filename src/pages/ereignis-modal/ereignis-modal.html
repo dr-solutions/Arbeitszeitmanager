@@ -20,23 +20,20 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>Start</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+      <ion-label>Beginn</ion-label>
+      <ion-datetime displayFormat="DD.MM.YYYY HH:mm" pickerFormat="HH:mm" [(ngModel)]="event.startTime"></ion-datetime>
     </ion-item>
 
     <ion-item>
-      <ion-label>End</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+      <ion-label>Ende</ion-label>
+      <ion-datetime displayFormat="DD.MM.YYYY HH:mm" pickerFormat="DD HH:mm" [(ngModel)]="event.endTime"></ion-datetime>
     </ion-item>
 
-    <ion-item>
-      <ion-label>All Day?</ion-label>
-      <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
-    </ion-item>
   </ion-list>
 
   <button ion-button full icon-left (click)="save()">
-    <ion-icon name="checkmark"></ion-icon> Add Event
+    <ion-icon name="checkmark"></ion-icon>
+    Hinzufügen
   </button>
 
 </ion-content>
